@@ -1,9 +1,21 @@
-.navbar{
-    padding: 20px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar-container{
+  position: fixed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0px 30px;
 }
+.navbar {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 100px;
+}
+
 
 .navbar .logo{
     width: 150px;
@@ -33,6 +45,10 @@
     cursor: pointer;
     transition: 0.3s;
 }
+.menu-icon{
+    display: none;
+    cursor: pointer;
+}
 
 .navbar button:hover{
     background-color: #fff4f2;
@@ -50,6 +66,9 @@
 .navbar-search-icon{
     position: relative;
 }
+.sidebar-menu-list{
+    display: none;
+}
 
 .navbar-search-icon .dot {
     position: absolute;
@@ -60,7 +79,55 @@
     top: -8px;
     right: -8px;
 }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 38vh;
+  width: 200px;
+  background-color: white;
+  z-index: 1200;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+}
+
+.sidebar .close-icon {
+  width: 25px;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.sidebar-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 18px;
+  color: #49557e;
+  cursor: pointer;
+
+}
+
+.sidebar-menu-list a {
+  text-decoration: none;
+  color: #49557e;
+  cursor: pointer;
+}
+
+.sidebar-menu-list .active {
+  border-bottom: 2px solid #49557e;
+  padding-bottom: 2px;
+}
+
 @media (max-width:1050px) {
+    .navbar{
+        margin: 0px 60px;
+    }
     .navbar .logo{
         width: 140px;
     }
@@ -77,8 +144,12 @@
     .navbar-right button{
         padding: 8px 25px;
     }
+    
 }
 @media (max-width:900px) {
+    .navbar{
+        margin: 0px 50px;
+    }
     .navbar .logo{
         width: 120px;
     }
@@ -98,7 +169,18 @@
     }
 }
 @media (max-width:750px) {
+    .navbar{
+        margin: 0px 0px;
+    }
     .navbar-menu{
         display: none;
     }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+     /* .sidebar {
+    width: 200px; 
+  } */
+    
 }
